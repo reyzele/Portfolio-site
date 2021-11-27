@@ -1,0 +1,18 @@
+footer.footer
+  .footer__row
+    .footer__col.footer__col--left
+      ul.menu.footer__menu
+          each href, title in links
+            li.menu__item
+              a.menu__link(href=`${href}`) #{title}
+    .footer__col.footer__col--right
+        each href, title in socials
+          li.socials__item.socials__item_footer
+            a(href=`${href}` target="_blank").socials__link.socials__link_footer
+              svg(class=`socials__img socials__img_footer_${title}`)
+                use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href=`./images/icons/sprite.svg#${title}`)
+  .footer__row
+    .footer__col.footer__col--left
+      p I am a web developer from Israel, and I made this site as part of my studies at LoftSchool Online Education School.
+    .footer__col.footer__col--right
+      p © Veksler Vadim | 2019

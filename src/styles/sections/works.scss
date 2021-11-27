@@ -1,0 +1,105 @@
+
+.works {
+  overflow: inherit;
+}
+
+.works__triangle-fill {
+  fill: #f9f8f0;
+}
+
+.works__header {
+  background-color: #faf8f0;
+}
+
+.works__title-dec {
+  width: 28%;
+  height: 100%;
+  fill: rgba($color: $gray-light, $alpha: .07);
+
+  @include laptop {
+    width: 42%;
+  }
+
+  @include tablets {
+    width: 50%;
+    top: 40%;
+  }
+
+  @include phones {
+    width: 80%;
+  }
+}
+
+.works__content {
+  height: 100vh;
+  display: flex;
+  min-height: 750px;
+
+  @include tablets {
+    flex-direction: column;
+    min-height: 950px;
+  }
+}
+
+.works__left {
+  background-color: #f0efe9;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+
+  @include tablets {
+    height: 75%;
+    width: 100%;
+  }
+
+  @include phones {
+    height: 82%;
+  }
+}
+
+.works__subtitle {
+  max-width: 80%;
+  margin-bottom: 30px;
+
+  @include laptop {
+    max-width: 85%;
+  }
+
+  @include tablets {
+    margin-bottom: 15px;
+  }
+}
+
+.works__btn {
+  background-color: #00bfa5;
+  text-align: center;
+  width: 200px;
+  border-radius: 5px;
+  transition: .3s;
+
+  &:hover {
+    background-color: $green-dark;
+  }
+
+  @include tablets {
+   
+  }
+}
+
+.works__right {
+  flex-direction: column;
+  display: flex;
+  width: 50%;
+  background-color: #efebe0;
+
+  @include tablets {
+    height: 25%;
+    width: 100%;
+  }
+
+  @include phones {
+    height: 18%;
+  }
+}

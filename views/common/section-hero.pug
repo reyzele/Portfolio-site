@@ -1,0 +1,45 @@
+section.section.hero(id='hero')
+  if isAuthorized
+    a.admin-panel(href='/admin') Admin panel
+  .hero__bg
+    img(src="./images/backgrounds/portfolio_header.jpg" sizes="(min-width: 768px)" srcset='./images/backgrounds/mountains-bg.png, ./images/backgrounds/mountains-bg.jpg 768w, ./images/backgrounds/phones-bg.png 480w').hero__bg-img
+  .hero__links
+    ul.socials
+      each href, title in socials
+        li.socials__item
+          a(href=`${href}` target='_blank').socials__link.socials__link_hero
+            svg(class=`socials__img socials__img_${title}`)
+              use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href=`./images/icons/sprite.svg#${title}`)
+  a.hamburger-menu: span
+  if title === 'Блог'
+    .hero__title
+      svg.hero__title-img.blog__title-img
+          use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#blog_header')
+  else
+    .hero__title
+      svg.hero__title-img
+        use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#portfolio_header')
+  .hero__user
+    .user
+      .user__avatar
+        img.user__avatar-img(src=`${avatar.picture}`, alt="Avatar")
+      if title === 'Блог'
+        .user__descriptions.user__descriptions--hero.user__descriptions--blog
+          h1.section__title.section__title_lines-white.blog__title Blog
+          h3.user__desc Articles I wrote
+      else
+        .user__descriptions.user__descriptions--hero
+          h2.user__name.user__name--hero= avatar.name
+          h3.user__desc= avatar.description
+  if pageName === 'Blog'
+    a.arrow.hero__arrow(href='#blog')
+      svg(class='arrow__img')
+        use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#arrow')
+  else if pageName === 'About'
+    a.arrow.hero__arrow(href='#about-me')
+      svg(class='arrow__img')
+        use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#arrow')
+  else if pageName === 'Works'
+    a.arrow.hero__arrow(href='#works')
+      svg(class='arrow__img')
+        use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#arrow')

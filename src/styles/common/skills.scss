@@ -1,0 +1,56 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 22px;
+
+  @include tablets {
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.skills__item {
+  width: 120px;
+  height: 120px;
+  margin: 16px;
+  height: 100%;
+  position: relative;
+
+  @include laptop {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+.skills__item-skill {
+  display: block;
+}
+
+.skills__item-title {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $green;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.skills__circle {
+  display: block;
+  fill: none;
+  stroke-width: 18px;
+}
+
+.skills__first-circle {
+  stroke: #dfdcd5;
+}
+
+.skills__second-circle {
+  stroke: $green;
+  stroke-dasharray: 0.001 282.6;
+  transition: all 1s;
+}

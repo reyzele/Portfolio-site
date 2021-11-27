@@ -1,0 +1,17 @@
+.triangle {
+  display: block;
+}
+
+.triangle__wrap {
+  position: absolute;
+  bottom: 99.98%;
+  width: 100%;
+}
+
+.triangle_fill_white {
+  fill: #efeee9;
+}
+
+.triangle_fill_badge {
+  fill: #eeebdf;
+}

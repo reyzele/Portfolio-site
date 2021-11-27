@@ -1,0 +1,15 @@
+.skills-list__item {
+  margin-bottom: 20px;
+}
+
+.skills-list__title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  padding-left: 32px;
+
+  @include tablets {
+    text-align: center;
+    font-size: 21px;
+    padding-left: 0;
+  }
+}

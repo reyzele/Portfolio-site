@@ -1,0 +1,6 @@
+.overlay-menu(id='overlay-menu')
+  nav.overlay-menu__content
+    ul.menu.overlay-menu__list
+      each href, title in links
+        li.menu__item.overlay-menu__item
+          a.overlay-menu__link(href=`${href}`) #{title}

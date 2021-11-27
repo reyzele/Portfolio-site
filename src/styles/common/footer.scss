@@ -1,0 +1,70 @@
+.footer {
+  background-color: $dark;
+  opacity: 0.85;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
+  padding: 18px 30px;
+  font-size: 16px;
+
+  &:nth-child(2) {
+    border-bottom: none;
+  }
+
+  @include tablets {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  @include phones {
+    font-size: 13px;
+    padding: 18px 0;
+  }
+}
+
+.footer__col {
+  display: flex;
+  max-width: 500px;
+  align-items: center;
+
+  p {
+    font-weight: 300;
+    color: #fff;
+    opacity: 0.5;
+  }
+
+  @include tablets {
+    max-width: 100%;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.footer__col--left {
+  text-align: left;
+
+  @include tablets {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+.footer__col--right {
+  text-align: right;
+
+  @include tablets {
+    text-align: center;
+  }
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: row;
+}

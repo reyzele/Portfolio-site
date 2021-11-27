@@ -1,0 +1,39 @@
+//Media
+@import "config/_mixins";
+
+@import "icons/_sass-inline-svg";
+@import "icons/_sass-inline-svg-data";
+
+@import "normalize.css";
+@import "layout/fonts";
+@import "config/variables";
+@import "layout/base";
+
+// Blocks
+@import "common/menu";
+@import "common/auth-form";
+@import "common/btns";
+@import "common/section";
+@import "common/social";
+@import "common/hamburger-menu";
+@import "common/user";
+@import "common/triangle";
+@import "common/slider";
+@import "common/arrow";
+@import "common/footer";
+@import "common/overlay";
+@import "common/skills-list";
+@import "common/skills";
+@import "common/blog-nav";
+@import "common/reviews";
+@import "common/overlay-menu";
+@import "common/hero-parallax";
+
+//Sections
+@import "sections/welcome";
+@import "sections/hero";
+@import "sections/about";
+@import "sections/works";
+@import "sections/blog";
+@import "sections/about-me";
+@import "sections/contacts";

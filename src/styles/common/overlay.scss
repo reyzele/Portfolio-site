@@ -1,0 +1,51 @@
+.overlay {
+  position: absolute;
+  z-index: 99999;
+  top: calc(50% - 153px / 2);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  padding: 24px 40px 34px 40px;
+  width: 380px;
+  background-color: rgba($color: #009688, $alpha: 0.85);
+}
+
+.overlay__title {
+  color: #ffffff;
+  margin-bottom: 28px;
+
+  &::before, &::after {
+    background-color: #fff;
+  }
+}
+
+.overlay__item {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.overlay__item-link {
+  opacity: 0.9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.overlay__item-icon {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+  margin-right: 10px;
+}
+
+.overlay__item-desc {
+  font-weight: 500;
+}

@@ -1,0 +1,116 @@
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials__item {
+  display: inline-block;
+  font-size: 0;
+  margin-right: 30px;
+  
+    &_footer {
+      margin-right: 10px;
+
+      &:last-child {
+      margin-right: 0;
+    }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+}
+
+.socials__link_welcome:hover {
+  
+}
+
+.socials__link {
+  &_welcome:hover {
+    .socials__img {
+      fill: $green;
+    }
+  }
+
+  &_hero:hover {
+    .socials__img {
+      fill: #fff;
+    }
+  }
+}
+
+.socials__link_footer {
+  border-radius: 50%;
+  display: flex;
+  border: 1px solid rgba($color: #fff, $alpha: .5);
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+
+  &:hover {
+    background-color: #fff;
+
+    .socials__img {
+      fill: rgba($color: $dark, $alpha: .85);
+    }
+  }
+}
+
+.socials__img {
+  fill: rgba($color: #fff, $alpha: .5);
+  transition: .3s;
+
+  &_vk {
+    width: 23px + 5px;
+    height: 13px + 5px; 
+
+    @include phones {
+      width: 23px;
+      height: 13px; 
+    }
+  }
+
+  &_github {
+    width: 20px + 5px;
+    height: 16px + 5px;
+
+    @include phones {
+      width: 20px;
+      height: 16px; 
+    }
+  }
+
+  &_in {
+    width: 18px + 5px;
+    height: 17px + 5px;
+
+    @include phones {
+      width: 18px;
+      height: 17px; 
+    }
+  }
+
+  &_welcome {
+    fill: rgba($color: $green, $alpha: .5);
+  }
+
+  &_footer {
+  
+  &_vk {
+    width: 23px;
+    height: 13px; 
+  }
+
+  &_github {
+    width: 20px;
+    height: 16px;
+  }
+
+  &_in {
+    width: 18px;
+    height: 17px;
+  }
+  }
+}

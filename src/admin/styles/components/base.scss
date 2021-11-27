@@ -1,0 +1,77 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic');
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.42;
+  font-weight: 500;
+  margin: 0;
+  color: #455a64;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.admin {
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 500;
+  padding-bottom: 2rem;
+}
+
+.content {
+  flex: 1;
+  position: relative;
+  background: url('/images/backgrounds/mountains-bg.jpg') center center / cover no-repeat;
+  padding: 2rem 1.5rem;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #ffffff;
+    opacity: 0.85;
+  }
+}
+
+.status {
+  color: #00bfa5;
+}

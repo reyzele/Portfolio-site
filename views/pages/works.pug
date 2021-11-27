@@ -1,0 +1,88 @@
+extends ../template
+
+block variables
+    - var pageName = 'Works'
+
+block content
+  include ../common/section-hero.pug
+  section.section.works#works
+    header.section__header.works__header
+      h1.section__title.section__title_lines My Works
+      +icon('works_header', 'section__title-dec works__title-dec')
+    .triangle__wrap
+      +triangle('triangle works__triangle-fill')
+    .works__content
+      .works__left
+        .slider__content
+          .slider__display
+            img.slider__display-img(src="./images/slider/1.png" alt="")
+          .slider__content-descriptions
+            h2.section__subtitle.section__subtitle_lines.works__subtitle
+              .subtitle
+            p.slider__content-text
+            a.works__btn(href="#" target="_blank"): span.slider__content-btn-text View site
+      .works__right
+        .slider
+          .slider__controls
+            a.slider__controls-btn.slider__controls-btn_left(href="#")
+              .slider__arrow.slider__arrow_down: img.slider__arrow-down-img(src="./images/slider/slider-arrow.png", alt="Arrow")
+              ul.slider__controls-list
+                if (slides) 
+                  each slide, index in slides
+                    li.slider__controls-item(data-full=`${slide.picture}` data-title=`${slide.name}` data-skills=`${slide.tech}` data-link=`${slide.link}`)
+                      img.slider__controls-img(src=`${slide.picture}`)
+              a.slider__controls-btn.slider__controls-btn_right(href="#")
+                .slider__arrow.slider__arrow_top: img.slider__arrow-down-img(src="./images/slider/slider-arrow.png", alt="Arrow")
+  section.section.about#about
+      .about__background
+          img.about__background-img(src="./images/about/about-bg.png", alt="Background")
+      header.section__header
+          h1.section__title.section__title_lines.about__title What they say about me
+          svg.section__title-dec.about__title-dec
+              use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#about_header')
+      ul.about__content
+          li.about__content-item
+              .about__content-quotes: img.about__content-quotes-img(src="./images/about/quotes.png", alt="Quote")
+              .about__content-text 
+                  p This guy was not learning web development somewhere, but at LoftSchool! 2 months only the most difficult trials and sleepless nights!
+              .about__avatar
+                  .about__avatar-img: img(src="./images/about/Dima.jpg", alt="Dima")
+                  .about__avatar-desc
+                      .about__avatar-name Kovalchuk Dmitry
+                      .about__avatar-text founder of loftschool
+          li.about__content-item
+              .about__content-quotes: img.about__content-quotes-img(src="./images/about/quotes.png", alt="Quote")
+              .about__content-text 
+                  p This code will pass any test. Only please, the site does not load on too old browsers!
+              .about__avatar
+                  .about__avatar-img: img(src="./images/about/Vova.jpg", alt="Vova")
+                  .about__avatar-desc
+                      .about__avatar-name Vladimir Sabantsev
+                      .about__avatar-text teacher
+      .about__form-container
+          .about__form-background
+          form.about__form#mail(action='/' method="POST" enctype="application/x-www-form-urlencoded")
+            h2.section__subtitle.section__subtitle_lines.about__form-title Contact with me
+            .about__form-desc
+              input(class='about__form-input' name='name' type='text' placeholder='Имя' required='')
+              input(class='about__form-input' name='email' type='email' placeholder='Email' required='')
+              textarea(class='about__form-textarea' name='text' required='' placeholder='Your message')
+            .btns.about__form-btns
+              label.btns__item.btns__item_about.btns__item_w100(for='send-btn')
+                input(class='visuallyhidden' id='send-btn' name='send-btn' type='submit' value='Send')
+                span.btns__link Send
+              label.btns__item.btns__item_about.btns__item_w100(for='resetForm')
+                input(class='visuallyhidden' id='resetForm' name='resetForm' type='reset' value='Reset')
+                span.btns__link Reset
+      .about__arrow
+        a.arrow(href='#hero')
+          svg(class='arrow__img arrow__img_up')
+            use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#arrow')  
+  include ../common/footer.pug
+  include ../common/burger-menu.pug
+  .status-overlay
+    .status-overlay__wrap
+      .status-overlay__close
+        svg.status-overlay__close-img
+          use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#cancel')
+      .status

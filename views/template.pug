@@ -1,0 +1,28 @@
+include ./config/mixin
+include ./config/var
+
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title #{title}
+    meta(content="" name="author")
+    meta(content="" name="description")
+    meta(content="" name="keywords")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    meta(http-equiv="content-language" content="ru")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    link(rel='stylesheet' href='./styles/main.min.css')
+    link(rel='icon' type='image/x-icon' href='./images/favicon.ico')
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+    script(src='./scripts/main.bundle.js' defer)
+  body
+    .preloader#preloader
+      .loader-1
+      .loader-2
+      .loader-3
+      span(id='load_perc') 0%
+    .wrapper
+      block content

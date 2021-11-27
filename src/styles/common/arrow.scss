@@ -1,0 +1,20 @@
+.arrow {
+  display: inherit;
+}
+
+.arrow__img {
+  width: 25px;
+  height: 16px;
+  fill: rgba($color: #fff, $alpha: .7);
+  transition: .3s;
+
+  &_up {
+    transform: rotate(-180deg);
+    transform-origin: center;
+  }
+
+  &:hover {
+    width: 27px;
+    height: 18px;
+  }
+}

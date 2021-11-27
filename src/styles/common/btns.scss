@@ -1,0 +1,38 @@
+.btns {
+  display: flex;
+}
+
+.btns__item {
+  flex: 1;
+  transition: 0.3s;
+
+  &_w100 {
+    width: 100%;
+  }
+
+  &:last-child {
+    .btns__link {
+      border: none;
+    }
+  }
+}
+
+.btns__link {
+  display: inline-block;
+  background-color: rgba($color: $green, $alpha: 0.7);
+  border-right: 2px solid rgba($color: #fff, $alpha: 0.5);
+  color: #fff;
+  white-space: nowrap;
+  height: 45px;
+  line-height: 45px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: $green-dark, $alpha: 0.7);
+  }
+}

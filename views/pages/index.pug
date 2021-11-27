@@ -1,0 +1,77 @@
+extends ../template
+
+block content
+  main.welcome
+    .welcome__parallax#scene
+      - for (var i = 1; i < 9; i++)
+        .welcome__parallax-layer(data-depth=`0.${i}`)
+          img(src=`./images/parallax/layer-0${i}.png` sizes="(max-width: 768px)" srcset=`./images/parallax/layer-0${i}.png, ./images/backgrounds/mountains-bg.jpg 768w`).welcome__parallax-img
+      .welcome__parallax-layer(data-depth=1)
+          img(src=`./images/parallax/big-sky.png` sizes="(max-width: 768px)" srcset=`./images/parallax/big-sky.png, ./images/backgrounds/mountains-bg.jpg 768w`).welcome__parallax-img
+    .welcome__auth
+        a.welcome__auth-link.welcome__auth-btn(href='#') Log in
+    .welcome__container#welcom-flip
+      .welcome__flipper
+        .welcome__front
+          .welcome__description
+              .user.welcome__user
+                  .user__avatar
+                    img.user__avatar-img(src=`${picture}`, alt="Avatar")
+                  .user__descriptions
+                      h2.user__name= name
+                      h3.user__desc= description
+              ul.socials.welcome__socials
+                  each href, title in socials
+                      li.socials__item
+                          a(href=`${href}` target='_blank').socials__link.socials__link_welcome
+                              svg(class=`socials__img socials__img_welcome socials__img_${title}`)
+                                  use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href=`./images/icons/sprite.svg#${title}`)
+          ul.btns#buttons
+            - var count = 0;
+            each href, title in links
+              if count < 3
+                li.btns__item
+                  a.btns__link(href=`${href}`) #{title}
+              - count++;
+        form.auth-form#auth(action='/login' method='POST')
+          .auth-form__description
+              h2.section__subtitle.section__subtitle_lines.auth-form__title Log in
+              label(for='user-login').auth-form__row
+                .auth-form__icon
+                  svg.auth-form__img.auth-form__img_login
+                    use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#login')
+                input.auth-form__input(id="user-login" name="login" placeholder="Login" required="")
+              label(for='user-password').auth-form__row
+                .auth-form__icon
+                  svg.auth-form__img.auth-form__img_password
+                    use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#password')
+                input.auth-form__input(id="user-password" name="password" type="password" required="" placeholder="Password")
+              label(for="check-human").auth-form__row
+                input(type="checkbox" id='check-human' name='isHuman').visuallyhidden
+                span.auth-form__custom-checkbox
+                span.auth-form__row-text I am human
+              .auth-form__row-title You're not exactly a robot?
+              .auth-form__row
+                label.auth-form__col(for="robot-yes")
+                  input(type="radio" id='robot-yes' name='isRealHuman' value="yes").visuallyhidden
+                  span.auth-form__custom-radio
+                  .auth-form__row-text Yes
+                label.auth-form__col(for="robot-no")
+                  input(type="radio" id='robot-no' name='isRealHuman' value="no").visuallyhidden
+                  span.auth-form__custom-radio
+                  .auth-form__row-text Not sure
+          ul.btns.auth-form-btns
+            li.btns__item.auth-form-btn
+              a.btns__link#return Return
+            li.btns__item.auth-form-btn
+              label.auth-form-btn(for="send-btn")
+                button.visuallyhidden(type='submit' id='send-btn')
+                .btns__link Sign in
+    footer.welcome__footer
+        p.welcome__footer-content © Veksler Vadim | 2019
+    .status-overlay
+      .status-overlay__wrap
+        .status-overlay__close
+            svg.status-overlay__close-img
+              use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#cancel')
+        .status= msg

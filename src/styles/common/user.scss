@@ -1,0 +1,63 @@
+.user__avatar {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 141px;
+  height: 141px;
+  overflow: hidden;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    background-color: rgba(1, 102, 114, 0.15);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.user__avatar-img {
+  max-width: 100%;
+}
+
+.user__descriptions {
+  margin-top: 18px;
+  text-align: center;
+
+  &--hero {
+    color: #fff;
+  }
+
+  &--blog {
+    margin-top: 40px;
+  }
+}
+
+.user__name {
+  font-weight: 500;
+  font-size: 28px;
+
+  @include phones {
+    font-size: 21px;
+  }
+}
+
+.user__name--hero {
+  font-size: 35px;
+
+  @include phones {
+    font-size: 21px;
+  }
+}
+
+.user__desc {
+  font-size: 16px;
+  font-weight: 300;
+
+  @include phones {
+    font-size: 14px;
+  }
+}

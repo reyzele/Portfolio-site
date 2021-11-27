@@ -1,0 +1,12 @@
+{
+  "server": {
+    "path": "http://localhost:3000",
+    "blog": "/api/blog",
+    "avatar": "/api/avatar",
+    "about": "/api/about",
+    "works": "/api/works"
+  },
+  "mail": {
+    "subject": "Message from site"
+  }
+}

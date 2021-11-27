@@ -1,0 +1,127 @@
+.hero {
+  background-image: url("../images/parallax/layer-bg.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+
+  @include tablets {
+    background: url("../images/backgrounds/portfolio_header.jpg") no-repeat top
+      center;
+    background-size: cover;
+  }
+
+  @include phones {
+    background: url("../images/backgrounds/phones-bg.png") no-repeat top center;
+    background-size: cover;
+  }
+
+  &_blog {
+    height: 100%;
+    min-height: auto;
+  }
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+
+  &::after {
+    content: "";
+    background-color: rgba($color: #016672, $alpha: 0.3);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  @include tablets {
+    img {
+      display: none;
+    }
+  }
+}
+
+.hero__bg-img {
+  width: 100%;
+  display: block;
+  bottom: 0;
+  position: absolute;
+  will-change: transform;
+}
+
+.hero__title {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  fill: rgba($color: #fff, $alpha: 0.06);
+
+  @include tablets {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hero__title-img {
+  height: 55%;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.hero__user {
+  z-index: 1;
+  margin-bottom: 62px;
+  position: relative;
+}
+
+.hero__links {
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  left: 30px;
+  top: 34px;
+
+  @include tablets {
+    left: 3%;
+  }
+
+  @include phones {
+    top: 2%;
+  }
+}
+
+.hero__triangle {
+  position: relative;
+  width: 100%;
+}
+
+.hero__arrow {
+  position: absolute;
+  z-index: 99;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &_blog {
+    display: none;
+
+    @include tablets {
+      display: inherit;
+    }
+  }
+}

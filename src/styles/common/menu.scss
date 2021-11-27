@@ -1,0 +1,25 @@
+.menu {
+
+}
+
+.menu__item {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include phones {
+    margin-right: 10px;
+  }
+}
+
+.menu__link {
+  color: #fff;
+  font-weight: 500;
+  transition: .3s;
+
+  &:hover {
+    color: $green;
+  }
+}

@@ -1,0 +1,62 @@
+extends ../template
+
+block variables
+    - var pageName = 'About'
+
+block content
+  include ../common/section-hero.pug
+  section.section.about-me#about-me
+      .triangle__wrap
+        svg(xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' class="triangle" viewbox='0 0 1000 85' preserveaspectratio='none')
+          polygon(points='0,0 0,86 500.8,86 500.8,75.5').about-me__triangle-fill_left
+          polygon(points='1000,0 1000,86 500,86 500,75.5').about-me__triangle-fill_right
+      .about-me__left
+          .about-me__left-wrap
+              header.section__header.about-me__header
+                  h1.section__title.section__title_lines.about-me__title About
+                  svg.section__title-dec.about-me__title-dec
+                      use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='./images/icons/sprite.svg#about_header')
+              .about-me__description
+                  .about-me__pic
+                      img.about-me__img(src="./images/about-me/me.jpg", alt="Me")
+                  .about-me__desc
+                      h2.section__subtitle.section__subtitle_lines.about-me__left-subtitle About me
+                      .about-me__text
+                          p I’m a web developer living in Israel. I spend my days with my hands in many different areas of web development from back end programming (NodeJS, PHP) to front end engineering (HTML, CSS, jQuery/Javascript and ReacJS).
+                          br
+                          p I’m extremely passionate about web development in all it’s forms and helping small businesses and artisans build and improve their online presence.
+      .about-me__right
+          .about-me__right-wrap
+              h2.section__subtitle.section__subtitle_lines.about-me__right-subtitle What can i be<br>Useful to you
+              .about-me__right-desc
+                  p Most of all I am attracted to Frontend development, but I am also familiar and can not solve complex tasks on Backend. But let's order.
+              .about-me__right-content
+                    ul.skills-list(id='skills')
+                      if (skills)
+                        - for (var i = 0; i < skillsType.length; i++)
+                          li.skills-list__item
+                            h4.skills-list__title= skillsType[i]
+                            ul.skills
+                                each skill in skills
+                                  if(skill.type === i+1)
+                                    - var opacity_ = `0.${skill.percents}`
+                                    if(skill.percents === 100)
+                                      opacity_ = 1
+                                    li.skills__item
+                                      svg(class="skills__circle" viewBox='0 0 110 110' style=`${opacity_}`)
+                                          circle(r="45" cx="50%" cy="50%" class="skills__first-circle")
+                                          circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="skills__second-circle" data-percent=`${skill.percents}`)
+                                      span.skills__item-title= skill.name
+  section.section.contacts(id='contacts')
+    #map
+    .overlay
+        h2.section__subtitle.section__subtitle_lines.overlay__title Contacts
+        ul.overlay__list
+            each item in contacts
+                li.overlay__item
+                    a.overlay__item-link(href=`${item.link}` target="_blank")
+                        svg.overlay__item-icon
+                            use(xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href=`./images/icons/sprite.svg#${item.icon}`)
+                        .overlay__item-desc #{item.desc}
+  include ../common/footer.pug
+  include ../common/burger-menu.pug

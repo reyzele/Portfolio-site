@@ -1,0 +1,118 @@
+.blog-nav {
+  position: relative;
+}
+
+.blog-nav__btn {
+  cursor: pointer;
+  z-index: 100;
+}
+
+.blog-nav__btn-wrap {
+  display: none;
+
+  @include tablets {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -45px;
+    width: 45px;
+    height: 45px;
+
+    p {
+      position: absolute;
+      background-color: rgba($color: $green, $alpha: 0.95);
+      left: -30px;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
+
+.blog-nav__list {
+  @include tablets {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 8%;
+  }
+}
+
+.blog-nav__fixed {
+  z-index: 99999999;
+  width: 312px;
+  top: 72px;
+  position: fixed;
+  transition: 0.3s left;
+
+  @include laptop {
+    width: 26%;
+  }
+
+  @include tablets {
+    width: 40%;
+    left: -40%;
+    top: 0;
+    height: 100vh;
+    background-color: rgba($color: $green, $alpha: 0.95);
+  }
+
+  @include phones {
+    width: 60%;
+    left: -60%;
+  }
+}
+
+.blog-nav__fixed_active {
+  left: 0;
+}
+
+.blog-nav__item {
+  color: $dark;
+  border-right: 3px solid transparent;
+  margin-bottom: 12px;
+  padding: 10px 0;
+  text-align: right;
+  padding-right: 22px;
+  cursor: pointer;
+  transition: 0.3s color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: $green;
+  }
+
+  @include tablets {
+    color: rgba($color: #fff, $alpha: 0.7);
+    padding: 0;
+    margin-bottom: 10%;
+    transition: 0.3s color;
+    border: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: rgba($color: #fff, $alpha: 1);
+    }
+  }
+}
+
+.blog-nav__item_active {
+  border-right: 3px solid $green;
+  color: $green;
+  font-weight: 700;
+  transition: 0.3s color;
+
+  @include tablets {
+    color: #fff;
+    opacity: 1;
+    border-right: none;
+  }
+}

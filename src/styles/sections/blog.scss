@@ -1,0 +1,100 @@
+.blog {
+  position: relative;
+}
+
+.blog__container {
+  width: 1200px;
+  justify-content: center;
+  display: flex;
+
+  @include laptop {
+    width: 100%;
+  }
+}
+
+.blog__hero {
+  min-height: 396px;
+  height: 396px;
+
+  @include tablets {
+    height: 100vh;
+  }
+}
+
+.blog__title {
+  align-items: flex-end;
+  fill: rgba($color: #fff, $alpha: 0.1);
+
+  @include tablets {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.blog__title-img {
+  margin: 0;
+
+  @include tablets {
+    margin-top: 120px;
+  }
+}
+
+.blog__user {
+  margin-top: 82px;
+
+  @include tablets {
+    margin: 0;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.blog__user-desc {
+  margin-top: 24px;
+  color: #fff;
+}
+
+.blog__title {
+  color: #fff;
+  padding: 0;
+}
+
+.blog__triangle-fill {
+  fill: #fff;
+}
+
+.blog__content {
+  display: flex;
+  justify-content: center;
+
+  @include tablets {
+    padding: 0 3%;
+  }
+}
+
+.blog__sidebar {
+  width: 26%;
+  padding-top: 72px;
+
+  @include tablets {
+    position: absolute;
+    margin: 0;
+    left: -99999px;
+  }
+}
+
+.blog__reviews {
+  width: 74%;
+  padding-left: 8%;
+
+  @include laptop {
+    padding: 0 8%;
+  }
+
+  @include tablets {
+    width: 100%;
+    margin: 0;
+  }
+}

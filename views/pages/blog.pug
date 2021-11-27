@@ -1,0 +1,40 @@
+extends ../template
+
+block variables
+    - var pageName = 'Blog'
+
+block content
+  include ../common/section-hero.pug
+  section.blog#blog
+      .triangle__wrap
+        +triangle('triangle blog__triangle-fill')
+      .blog__content
+        .blog__container
+          aside.blog__sidebar
+            nav.blog-nav#nav
+              .blog-nav__btn-wrap
+                p.blog-nav__btn
+              ul.blog-nav__list
+                if (articles)
+                  each item, index in articles
+                    if index == 0
+                      li.blog-nav__item.blog-nav__item_active= item.title
+                    else
+                      li.blog-nav__item= item.title
+          .blog__reviews
+            ul.reviews
+              if (articles)
+                each item in articles
+                  li.reviews__item
+                    h2.reviews__title= item.title
+                      -
+                        var date= new Date(item.date).toLocaleDateString('ru', { 
+                          year: 'numeric', 
+                          month: '2-digit', 
+                          day: '2-digit'
+                          })
+                    time.reviews__date= date
+                    .reviews__text
+                      div !{item.body}
+  include ../common/footer.pug
+  include ../common/burger-menu.pug

@@ -1,0 +1,50 @@
+.list {
+  display: flex;
+  background: $beige;
+  
+  @include tablets {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.item {
+  border-right: 2px solid #fff;
+
+  @include tablets {
+    border-top: 2px solid #fff;
+    border-right: none;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  &--active {
+    background-color: white;
+
+    .link {
+      opacity: 1;
+      color: $green;
+    }
+  }
+}
+
+.link {
+  position: relative;
+  padding: 20px 68px;
+  display: block;
+  opacity: 0.8;
+  color: #455a64;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

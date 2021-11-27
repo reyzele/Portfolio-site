@@ -1,0 +1,253 @@
+.about-me {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow: inherit;
+
+  @include tablets {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.about-me__triangle-fill_left {
+  fill: #efeee9;
+}
+
+.about-me__triangle-fill_right {
+  fill: #eeebdf;
+
+  @include tablets {
+    fill: #efeee9;
+  }
+}
+
+.about-me__left {
+  position: relative;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  background-color: #efeee9;
+
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.about-me__triangle-desktop {
+  position: absolute;
+  width: 100%;
+  transform: rotate(180deg);
+  top: 1px;
+  transform-origin: top;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.about-me__left-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 20px 0 0;
+
+  @include laptop {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  @include tablets {
+    padding: 0;
+  }
+}
+
+.about-me__header {
+  width: 50%;
+  align-items: flex-start;
+  margin-top: 10px;
+
+  @include laptop {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  @include tablets {
+    padding: 42px 0;
+    margin: 0;
+  }
+
+  @include phones {
+    padding: 26px 0;
+    margin: 0;
+  }
+}
+
+.about-me__title {
+  padding: 0;
+}
+
+.about-me__title-dec {
+  position: absolute;
+  width: 82%;
+  top: 30px;
+  fill: rgba($color: $gray-light, $alpha: 0.07);
+
+  @include laptop {
+    padding-bottom: 20px;
+    width: 65%;
+  }
+
+  @include tablets {
+    width: 40%;
+    padding-bottom: 0;
+    top: 50%;
+    min-width: 280px;
+  }
+
+  @include phones {
+    width: 50%;
+    min-width: 200px;
+  }
+}
+
+.about-me__description {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px 0;
+
+  @include laptop {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include tablets {
+    width: 62%;
+    margin-bottom: 45px;
+    padding: 0;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 45px;
+    padding: 0;
+  }
+}
+
+.about-me__pic {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+
+  @include tablets {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  @include phones {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: "";
+    background-color: #efeee9;
+    opacity: 0.1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.about-me__img {
+  display: block;
+  width: 100%;
+
+  @include laptop {
+  }
+}
+
+.about-me__desc {
+  @include phones {
+    width: 95%;
+  }
+}
+
+.about-me__left-subtitle {
+  margin: 22px 0;
+
+  @include tablets {
+    margin-bottom: 9px;
+    margin-top: 26px;
+  }
+}
+
+.about-me__text {
+  color: $gray;
+  overflow: auto;
+}
+
+.about-me__right {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #eeebdf;
+
+  @include tablets {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+}
+
+.about-me__right-wrap {
+  width: 100%;
+
+  @include tablets {
+    padding: 38px 0;
+  }
+}
+
+.about-me__right-subtitle {
+  margin-top: 8px;
+}
+
+.about-me__right-content {
+  @include tablets {
+  }
+}
+
+.about-me__right-desc {
+  color: $gray;
+  margin: 25px 0;
+  padding: 0 38px;
+
+  @include tablets {
+    display: flex;
+    justify-content: center;
+    padding: 0 7%;
+    margin-top: 12px;
+    margin-bottom: 40px;
+    padding: 0;
+
+    p {
+      width: 75%;
+
+      @include phones {
+        width: 100%;
+      }
+    }
+  }
+
+  @include phones {
+    padding: 3%;
+  }
+}
