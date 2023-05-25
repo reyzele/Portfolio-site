@@ -10,6 +10,7 @@ module.exports.getAvatar = function(req, res) {
   const picture = mongoose.model("avatar");
 
   picture.findOne().then((item) => {
+    console.log('===>', item);
     if (!item) {
       res.status(200).json(avatar);
     } else {

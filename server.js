@@ -29,7 +29,7 @@ app.use(flash());
 app.use(
   session({
     key: "mySession",
-    secret: process.env.SECURE,
+    secret: 'secret',
     cookie: {
       path: "/",
       httpOnly: true,
